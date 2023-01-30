@@ -24,7 +24,6 @@ class Result {
 
         Collections.sort(a);
         Stack<Integer> lonelyStack = new Stack<Integer>();
-        int ans = 0;
 
         if (a.size() == 1) {
             return a.get(0);
@@ -35,11 +34,12 @@ class Result {
                 lonelyStack.push(a.get(i));
             } else if (lonelyStack.peek() == a.get(i)) {
                 lonelyStack.pop();
+            } else {
+                break;
             }
         }
 
-        ans = lonelyStack.peek();
-        return ans;
+        return lonelyStack.peek();
 
     }
 
